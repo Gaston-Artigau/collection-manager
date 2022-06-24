@@ -8,19 +8,19 @@ export const nominaReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.nominaAdd:
             return {
-                ... state, 
+                ...state, 
                 data: [... state.data, action.payload]
             }
 
         case types.nominaRead:
             return {
-                ... state,
+                ...state,
                 data: action.payload
             }
 
         case types.nominaDelete:
             return {
-                ... state,
+                ...state,
                 data: state.data.filter((nomina) => {
                     return nomina.id !== action.payload
                 })
@@ -28,7 +28,7 @@ export const nominaReducer = (state = initialState, action) => {
 
         case types.nominaClean:
             return {
-                ... state,
+                ...state,
                 data: []
             }
     

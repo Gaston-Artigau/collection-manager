@@ -15,7 +15,7 @@ export const crearRegistro = (pago) => {
         const id = await referencia.id
 
         const newData = {
-            ... datos,
+            ...datos,
             id
         }
 

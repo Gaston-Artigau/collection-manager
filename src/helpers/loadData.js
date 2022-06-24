@@ -10,7 +10,7 @@ export const loadData = async (uid) => {
 
         data.push({
             id: nomina.id,
-            ... nominaData
+            ...nominaData
         })
     })
     
