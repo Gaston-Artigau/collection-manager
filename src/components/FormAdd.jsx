@@ -9,8 +9,8 @@ const FormAdd = () => {
 
   const [cantidadPago, setCantidadPago] = useState(
     {
-        pagoHora: 0,
-        horas: 0
+        pagoHora: null,
+        horas: null
     }
   )
 
