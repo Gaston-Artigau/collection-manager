@@ -14,7 +14,7 @@ const AppScreen = () => {
     <>
       <Navbar/>
 
-      <div className="container animate__animated animate__jackInTheBox">
+      <div className="container animate__animated animate__fadeInDown">
         <h1 className="center">Hola <b><i>{name}</i></b></h1>
         <hr/>
 
