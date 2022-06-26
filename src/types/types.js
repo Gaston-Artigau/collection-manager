@@ -1,4 +1,4 @@
-export const types = {
+export const types = { //types que se utilizan en los reducers
     login: '[Auth] login',
     logout: '[Auth] logout',
 

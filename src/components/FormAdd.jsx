@@ -8,26 +8,22 @@ const FormAdd = () => {
   const [viewForm, setViewForm] = useState(false)
 
   const [cantidadPago, setCantidadPago] = useState(
-    {
-        pagoHora: null,
-        horas: null
+    { //estado inicial
+      pagoHora: null,
+      horas: null
     }
   )
 
-  const {pagoHora, horas} = cantidadPago
-
-//   const [pagoHora, setPagoHora] = useState(0)
-//   const [horas, setHoras] = useState(0)
+  const {pagoHora, horas} = cantidadPago // desestructuracion
 
   const handleAdd = () => {
-    setViewForm(!viewForm)
-    // dispatch(crearRegistro())
+    setViewForm(!viewForm) //se invierte el estado actual de viewForm
   }
 
   const handleChange = (e) => {
     setCantidadPago({
         ...cantidadPago,
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value //el nuevo valor que se le dé a pagoHoras o horas se le asignara automaticamente, ej: horas: 5
     })
   }
 
@@ -35,9 +31,9 @@ const FormAdd = () => {
 
     const cantidadFinal = horas * pagoHora
 
-    dispatch(crearRegistro(cantidadFinal))
+    dispatch(crearRegistro(cantidadFinal))  // se envia la data dentro de la funcion crearRegistro
 
-    setCantidadPago(
+    setCantidadPago( //se reinicia el estado luego de enviar la data (dispatch)
       {
         pagoHora: 0,
         horas: 0
@@ -48,25 +44,25 @@ const FormAdd = () => {
   return (
     <div><br/>
         <button onClick={handleAdd} className="btn green">
-            {
-                !viewForm ? 'Agregar' : 'Cerrar'
-            }
+          {
+            !viewForm ? 'Agregar' : 'Cerrar'
+          }
         </button>
 
         {
-            viewForm && (
-            <div className="animate__animated animate__fadeIn">
-              <br/>
-              
-              <label htmlFor="icon_prefix1">Pago X hora: </label>
-              <input id="icon_prefix1" type="text" placeholder="Ingresa pago x hora" value={pagoHora} onChange={handleChange} name="pagoHora"/><br/>
+          viewForm && (
+          <div className="animate__animated animate__fadeIn">
+            <br/>
+            
+            <label htmlFor="icon_prefix1">Pago X hora en $: </label>
+            <input id="icon_prefix1" type="number" placeholder="Ingresa pago x hora" value={pagoHora} onChange={handleChange} name="pagoHora"/><br/>
 
-              <label htmlFor="icon_prefix2">Horas trabajadas: </label>
-              <input id="icon_prefix2" type="text" placeholder="Ingresa cantidad de horas" value={horas} onChange={handleChange} name="horas"/>
+            <label htmlFor="icon_prefix2">Horas trabajadas: </label>
+            <input id="icon_prefix2" type="number" placeholder="Ingresa cantidad de horas" value={horas} onChange={handleChange} name="horas"/>
 
-              <button onClick={handleSave} className="btn purple">Calcular y Guardar</button>
-            </div>
-            )
+            <button onClick={handleSave} className="btn purple">Calcular y Guardar</button>
+          </div>
+          )
         }
     </div>
   )

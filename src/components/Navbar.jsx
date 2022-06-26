@@ -7,7 +7,7 @@ const Navbar = () => {
 
     const dispatch = useDispatch()
 
-    const handleLogout = () => {
+    const handleLogout = () => { //se limpia el store y se desloguea
         dispatch(clean())
         dispatch(logout())
     }

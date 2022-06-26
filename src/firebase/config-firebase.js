@@ -12,7 +12,7 @@ const firebaseConfig = {
 };
   
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig); //configuracion incial de firebase
 
 const db = firebase.firestore()
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()

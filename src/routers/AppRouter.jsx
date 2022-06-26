@@ -15,7 +15,7 @@ const AppRouter = () => {
 
   const dispatch = useDispatch()
 
-  const [log, setLog] = useState(false)
+  const [log, setLog] = useState(false) //state que indica si se esta logueado o no
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(

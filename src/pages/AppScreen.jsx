@@ -6,9 +6,9 @@ import Element from '../components/Element'
 
 const AppScreen = () => {
 
-  const name = useSelector( state => state.auth.displayName)
+  const name = useSelector( state => state.auth.displayName) //se selecciona el displayName a travez de una funcion de redux desde el state de authReducer.js
   
-  const data = useSelector( state => state.nomina.data)
+  const data = useSelector( state => state.nomina.data) //se selecciona la datae a travez de una funcion de redux desde el state de nominaReducer.js
 
   return (
     <>

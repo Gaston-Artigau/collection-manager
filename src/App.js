@@ -4,7 +4,7 @@ import AppRouter from './routers/AppRouter';
 import { store } from './store/store';
 
 function App() {
-  return (
+  return ( //el store de firebase esta disponible en toda la app
     <Provider store={store}>
       <AppRouter/>
     </Provider>
